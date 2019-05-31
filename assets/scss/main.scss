@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,600&display=swap');
+
+.page-enter-active, .page-leave-active {
+    transition: opacity .5s;
+  }
+  .page-enter, .page-leave-to {
+    opacity: 0;
+  }
+.flag {
+  width: 15px;
+  padding-top: 5px;
+}
+.icon {
+  font-size: 70px !important;
+}
+// ########################### BASE ###########################
+// ########################### BASE ###########################
+// ########################### BASE ###########################
+
+a {
+  text-decoration: none;
+}
+body {
+  font-family: 'Oswald' !important;
+}
+
+
+
+// ########################### HEADER ###########################
+// ########################### HEADER ###########################
+// ########################### HEADER ###########################
+
+.switcherLang {
+  color:inherit;
+}
+.toolBar {
+  background:transparent;
+}
+// .layerCarousel {
+//   position: relative;
+// }
+// .layerCarousel:after {
+//   content: "";
+//   position: absolute;
+//   width: 100%;
+//   height:100%;
+//   top: 0;
+//   left: 0;
+//   background: rgba(0,0,0,0.1);
+//   z-index: 0;
+// }
+
+// ########################### END HEADER ###########################
+// ########################### END HEADER ###########################
+// ########################### END HEADER ###########################
+
+.v-card--reveal {
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  opacity: .6 !important;
+  position: absolute;
+  width: 100%;
+}
+.v-cardtext--reveal {
+  background: #333;
+}
+
+.content {
+  padding: 50px 0 50px 0 !important;
+}
+
+// ########################### ABOUT ###########################
+// ########################### ABOUT ###########################
+// ########################### ABOUT ###########################
+
+// .about-section {
+//   width: 100% !important;
+// }
+
+
+// ########################### END ABOUT ###########################
+// ########################### END ABOUT ###########################
+// ########################### END ABOUT ###########################
