@@ -1,7 +1,7 @@
 <template>
 <v-carousel hide-delimiters style="height: 100%">
         <v-carousel-item  v-for="item in itemsArray" :src="item.src" :key="item.id">
-        <v-jumbotron height="100%">
+        <v-jumbotron height="100%" v-if="item.jumbotron">
             <v-container fill-height>
               <v-layout align-center wrap>
                 <v-flex offset-xs1 xs10>

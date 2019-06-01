@@ -34,7 +34,8 @@ export default {
   */
   css: [
     '~/assets/style/app.styl',
-    '@/assets/scss/main.scss'
+    '@/assets/scss/main.scss',
+    '@fortawesome/fontawesome-svg-core/styles.css'
   ],
 
   /*
@@ -42,6 +43,7 @@ export default {
   */
   plugins: [
     '@/plugins/vuetify',
+    '@/plugins/fontawesome.js'
   ],
 
   /*
@@ -68,7 +70,7 @@ export default {
       lazy: true,
       langDir: 'lang/',
       defaultLocale: 'es',
-    }]
+    }],
   ],
   /*
   ** Axios module configuration

@@ -11,10 +11,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-brands-svg-icons": "^5.8.2",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
     "flag-icon-css": "^3.3.0",
     "nuxt": "^2.4.0",
+    "nuxt-fontawesome": "^0.4.0",
     "nuxt-i18n": "^5.12.3",
     "vue-flag-icon": "^1.0.6",
     "vuetify": "^1.5.5",

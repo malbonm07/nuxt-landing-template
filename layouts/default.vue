@@ -76,7 +76,11 @@
       :fixed="fixed"
       app
     >
-      <span>&copy; 2019</span>
+    <v-layout row wrap justify-center>
+      <v-flex shrink>
+        <span class="text-xs-center">&copy; 2019 Warehouse. All Rights Reserved. Design by malbnom07</span>
+      </v-flex>
+    </v-layout>
     </v-footer>
 
 <!-----------------------------END FOOTER ----------------------------->
@@ -147,16 +151,19 @@ export default {
             id: '1',
             src: img1,
             title: 'find your perfect property',
+            jumbotron: true
           },
           {
             id: '2',
             src: img2,
-            title: 'buy & sell properties here'
+            title: 'buy & sell properties here',
+            jumbotron: true
           },
           {
             id: '3',
             src: img3,
-            title: 'look at our news'
+            title: 'look at our news',
+            jumbotron: true
           },
       ]
     }
