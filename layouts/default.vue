@@ -3,7 +3,7 @@
 
 <!----------------------------- HEADER ---------------------------->
 
-    <div>
+    <div id="topHome">
 
 <!------- Toolbar -------->
 
@@ -60,7 +60,7 @@
       fixed
     >
       <v-list>
-        <v-list-tile v-for="item in menu" :key="item.title" @click="go()">
+        <v-list-tile v-for="item in menu" :key="item.title" @click="$vuetify.goTo(item.idSection, options)">
           <v-list-tile-action>
             <v-icon>{{item.icon}}</v-icon>
           </v-list-tile-action>
@@ -108,6 +108,11 @@ export default {
   },
   data() {
     return {
+      options: {
+          duration: '300',
+          offset: '0',
+          easing: 'easeInOutCubic'
+      },
       toolBarHeight: '120',
       clipped: false,
       drawer: false,
@@ -116,32 +121,38 @@ export default {
         {
           icon: 'home',
           title: this.$i18n.t('pages.home'),
-          to: '/'
+          to: '/',
+          idSection: '#topHome'
         },
         {
           icon: 'business',
           title: this.$i18n.t('pages.properties'),
-          to: '/inspire'
+          to: '/inspire',
+          idSection: '#properties'
         },
         {
           icon: 'group_work',
           title: this.$i18n.t('pages.agents'),
-          to: '/agents'
+          to: '/agents',
+          idSection: '#agents'
         },
         {
           icon: 'sentiment_satisfied_alt',
           title: this.$i18n.t('pages.about'),
-          to: '/about'
+          to: '/about',
+          idSection: '#about'
         },
         {
           icon: 'fiber_new',
           title: this.$i18n.t('pages.news'),
-          to: '/news'
+          to: '/news',
+          idSection: '#news'
         },
         {
           icon: 'mail_outline',
           title: this.$i18n.t('pages.contacts'),
-          to: '/contact'
+          to: '/contact',
+          idSection: '#contact'
         }
       ],
       miniVariant: false,

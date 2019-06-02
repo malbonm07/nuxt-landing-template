@@ -43,7 +43,8 @@ export default {
   */
   plugins: [
     '@/plugins/vuetify',
-    '@/plugins/fontawesome.js'
+    '@/plugins/fontawesome.js',
+    { src: "@/plugins/aos.js", ssr: false },
   ],
 
   /*

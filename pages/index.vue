@@ -3,9 +3,9 @@
 
 <!------------------------- LIST OF PROPIERTIES ----------------------->
 <v-container>
-  <v-layout row wrap pt-5>
+  <v-layout row wrap pt-5 id="properties">
     <v-flex xs12 sm6 md4 v-for="(card, i) in cards" :key="i" pa-2>
-        <Card :cardObject="card" :colorTheme="colorPropertiesCard">
+        <Card :cardObject="card" :colorTheme="colorPropertiesCard" data-aos="fade-up">
           <template v-slot:header>
             {{card.title}}
           </template>
@@ -35,9 +35,9 @@
 </v-container>
 <!------------------------- LIST OF AGENTS ----------------------->
 <v-container>
-  <v-layout row wrap>
+  <v-layout row wrap id="agents">
     <v-flex xs12 sm6 md4 v-for="(agent, i) in agents" :key="i" pa-2>
-      <Card :cardObject="agent" :colorTheme="colorAgentsCard">
+      <Card :cardObject="agent" :colorTheme="colorAgentsCard" data-aos="flip-up" :data-aos-delay="agent.delay">
         <template v-slot:title>
           <div style="text-align: center;">
             <h3 class="display-1 text-capitalize mb-2" style="color: #000;">{{agent.name}}</h3>
@@ -58,14 +58,14 @@
 
   <div style="background: #00BFA5;" class="mt-5 mb-5">
     <v-container>
-      <v-layout row wrap justify-center>
+      <v-layout row wrap justify-center id="about">
         <v-flex shrink>
           <h2 class='display-3 pt-3 pb-5' style="color: #000;">HOW IT WORKS</h2>
         </v-flex>
       </v-layout>
       <v-layout row wrap>
         <v-flex xs12 sm4 md4 v-for="(item, i) in about" :key="i">
-          <v-card color="transparent" elevation='0' class="pa-1">
+          <v-card color="transparent" elevation='0' class="pa-1" data-aos="flip-up">
             <div style="display:flex; justify-content: center;">
               <v-icon class="icon" color='#000'>{{item.icon}}</v-icon>
             </div>
@@ -126,7 +126,7 @@
       <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">services</h2>
     </v-flex>
     <v-flex xs12 sm6 md4 v-for="(service, i) in services" :key="i" pa-1>
-      <services :itemObject="service">
+      <services :itemObject="service" data-aos="zoom-in" :data-aos-delay="service.delay">
       </Services>
     </v-flex>
   </v-layout>
@@ -153,12 +153,12 @@
 <!------------------------- NEWS & EVENTS ----------------------->
 
 <v-container grid-list-xs>
-  <v-layout row wrap>
+  <v-layout row wrap id="news">
     <v-flex xs12>
       <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">news & events</h2>
     </v-flex>
     <v-flex xs12 sm4 v-for="(item,i) in news" :key="i" pa-2>
-      <v-card nuxt :to="item.linkerTo">
+      <v-card nuxt :to="item.linkerTo" data-aos="fade-up" :data-aos-delay="item.delay">
         <v-img
           :src="item.src"
           height="400px"
@@ -171,7 +171,7 @@
           </div>
         </v-card-title>
       </v-card>
-      <div class="mt-3">
+      <div class="mt-3" data-aos="flip-up">
           <span class="grey--text subheading text-capitalize">{{item.name}}&nbsp;-&nbsp;</span>
           <span class="grey--text subheading text-capitalize">{{item.date}}&nbsp;-&nbsp;</span>
           <a :href="item.linkerTo" style="color: #00BFA5;" class="subheading">News</a>
@@ -185,7 +185,7 @@
 <!------------------------- CONTACT SECTION ----------------------->
 
 <v-container grid-list-xs>
-  <v-layout row wrap justify-space-between>
+  <v-layout row wrap justify-space-between id="about">
     <v-flex xs12>
       <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">contact us</h2>
       <h4 class="title text-uppercase pt-5 pb-5 pl-3">get in touch</h4>
@@ -255,7 +255,7 @@
 
 <v-divider></v-divider>
 <v-container grid-list-xs mt-4 style="background: #EEEEEE;">
-  <v-layout row wrap justify-space-between>
+  <v-layout row wrap justify-space-between id="contact">
     <v-flex xs12 sm4>
       <h4 class="title text-uppercase font-weight-regular pb-4">about us</h4>
       <p class="subheading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
@@ -399,19 +399,22 @@ export default {
           name: 'aaron holmes',
           description:'real estate agent',
           src: person1,
-          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.'
+          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.',
+          delay: '100'
         },
         {
           name: 'Olivia williams',
           description:'real estate agent',
           src: person2,
-          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.'
+          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.',
+          delay: '200'
         },
         {
           name: 'isabella moore',
           description:'real estate agent',
           src: person3,
-          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.'
+          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.',
+          delay: '300'
         }
       ],
       about: [
@@ -459,37 +462,43 @@ export default {
           title: 'find property',
           icon: 'search',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
-          link: 'https://www.google.com'
+          link: 'https://www.google.com',
+          delay: '100'
         },
         {
           title: 'buy property',
           icon: 'attach_money',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
-          link: 'https://www.google.com'
+          link: 'https://www.google.com',
+          delay: '200'
         },
         {
           title: 'beautiful home',
           icon: 'home',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
-          link: 'https://www.google.com'
+          link: 'https://www.google.com',
+          delay: '300'
         },
         {
           title: 'buildings & lands',
           icon: 'domain',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
-          link: 'https://www.google.com'
+          link: 'https://www.google.com',
+          delay: '400'
         },
         {
           title: 'property locator',
           icon: 'location_on',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
-          link: 'https://www.google.com'
+          link: 'https://www.google.com',
+          delay: '500'
         },
         {
           title: 'mobile apps',
           icon: 'stay_current_portrait',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
-          link: 'https://www.google.com'
+          link: 'https://www.google.com',
+          delay: '600'
         }
       ],
       testimonials: [
@@ -520,21 +529,24 @@ export default {
           title: 'popular real estate propierties for 2019',
           name: 'aaron holmes',
           date: 'jan 18, 2019',
-          linkerTo: '/news/new1'
+          linkerTo: '/news/new1',
+          delay: '100'
         },
         {
           src: carouselImg2,
           title: 'popular real estate propierties for 2019',
           name: 'olivia williams',
           date: 'march 20, 2019',
-          linkerTo: '/news/new1'
+          linkerTo: '/news/new1',
+          delay: '200'
         },
         {
           src: carouselImg1,
           title: 'popular real estate propierties for 2019',
           name: 'isabella moore',
           date: 'april 17, 2019',
-          linkerTo: '/news/new1'
+          linkerTo: '/news/new1',
+          delay: '300'
         }
       ]
     })

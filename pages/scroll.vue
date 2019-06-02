@@ -19,7 +19,16 @@
         <v-slider v-model="offset" min="-500" max="500" label="Offset" thumb-label></v-slider>
       </v-flex>
       <v-flex>
-        <v-btn ref="button" color="primary" block @click="$vuetify.goTo(target, options)">scroll</v-btn>
+        <v-btn ref="button" color="primary" block @click="$vuetify.goTo('#hola', options)">scroll</v-btn>
+      </v-flex>
+      <div style="height: 1000px;">
+
+      </div>
+      <v-flex xs12>
+              <div id="hola" class="mb-5">
+        <a href="">HOLA MUNDO!</a>
+        <h2>dasdsadasdsa</h2>
+      </div>
       </v-flex>
     </v-layout>
   </v-container>
