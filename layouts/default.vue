@@ -11,8 +11,8 @@
       :clipped-left="clipped"
       fixed
       app
-      height="120"
-      color="transparent"
+      :height="toolBarHeight"
+      color="transparent scroll-y"
       class="toolBar"
     >
       <nuxt-link to="/" style="color: black;"><v-toolbar-title v-text="title"/></nuxt-link>
@@ -108,6 +108,7 @@ export default {
   },
   data() {
     return {
+      toolBarHeight: '120',
       clipped: false,
       drawer: false,
       fixed: false,
@@ -172,10 +173,10 @@ export default {
   methods: {
     go() {
       return;
+    },
+    onScroll(e) {
+      console.log(e.target)
     }
   },
-  computed: {
-
-}
 }
 </script>
