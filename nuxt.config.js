@@ -45,6 +45,7 @@ export default {
     '@/plugins/vuetify',
     '@/plugins/fontawesome.js',
     { src: "@/plugins/aos.js", ssr: false },
+    '@/directives/scroll.js'
   ],
 
   /*

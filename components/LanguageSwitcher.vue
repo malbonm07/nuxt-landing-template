@@ -3,7 +3,6 @@
     <v-menu offset-y>
       <template v-slot:activator="{ on }">
         <v-btn
-          dark
           v-on="on"
           @click="change()"
         >

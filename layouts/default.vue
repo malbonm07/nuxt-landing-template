@@ -6,25 +6,28 @@
     <div id="topHome">
 
 <!------- Toolbar -------->
-
       <v-toolbar
       :clipped-left="clipped"
       fixed
       app
-      :height="toolBarHeight"
-      color="transparent scroll-y"
+      :height="setToolBarAnimation.setHeight"
+      :color="setToolBarAnimation.setColor"
       class="toolBar"
+      ref="barra"
+      v-scroll="onScroll"
     >
       <nuxt-link to="/" style="color: black;"><v-toolbar-title v-text="title"/></nuxt-link>
       <v-spacer />
       <LanguageSwitcher>
       </LanguageSwitcher>
-      <v-btn
+      <v-card>
+              <v-btn
         icon
         @click.stop="rightDrawer = !rightDrawer"
       > 
         <v-icon>menu</v-icon>
       </v-btn>
+      </v-card>
     </v-toolbar>
 
 <!------- end Toolbar -------->
@@ -108,6 +111,10 @@ export default {
   },
   data() {
     return {
+      setToolBarAnimation: {
+        setHeight: '120',
+        setColor: 'transparent'
+      },
       options: {
           duration: '300',
           offset: '0',
@@ -185,9 +192,20 @@ export default {
     go() {
       return;
     },
-    onScroll(e) {
-      console.log(e.target)
+    onScroll(event, el) {
+      if(window.scrollY > 500) {
+        this.setToolBarAnimation.setHeight = '80'
+        this.setToolBarAnimation.setColor = 'white'
+      }else if(window.scrollY < 550) {
+        this.setToolBarAnimation.setHeight = '120'
+        this.setToolBarAnimation.setColor = 'transparent'
+      }
     }
   },
+  computed: {
+    i18n() {
+      
+    }
+  }
 }
 </script>
