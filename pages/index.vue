@@ -95,11 +95,12 @@
       <h2 class="display-2 text-capitalize" style="color: #00BFA5;">warehouse real estate template</h2>
       <p class="title pt-2 pb-2 font-weight-light grey--text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       <p>Est qui eos quasi ratione nostrum excepturi id recusandae fugit omnis ullam pariatur itaque nisi voluptas impedit Quo suscipit omnis iste velit maxime.</p>
-        <v-list>
+        <v-list style="background: transparent;">
           <v-list-tile
             v-for="(item, i) in realEstateList"
             :key="i"
             avatar
+            color="transparent"
           >
             <v-list-tile-action>
               <v-icon v-if="item.icon" color="#00BFA5">{{item.icon}}</v-icon>
@@ -140,7 +141,7 @@
     <v-flex xs12>
       <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">testimonial</h2>
     </v-flex>
-    <v-flex xs12 sm6 v-for="(testimony, i) in testimonials" :key="i">
+    <v-flex xs12 sm6 v-for="(testimony, i) in testimonials" :key="i" class="pa-1">
       <Testimonial :itemObject="testimony">
       </Testimonial>
     </v-flex>
@@ -157,7 +158,7 @@
       <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">news & events</h2>
     </v-flex>
     <v-flex xs12 sm4 v-for="(item,i) in news" :key="i" pa-2>
-      <v-card>
+      <v-card nuxt :to="item.linkerTo">
         <v-img
           :src="item.src"
           height="400px"
@@ -167,12 +168,14 @@
         <v-card-title primary-title>
           <div>
             <div class="headline text-uppercase pb-2 font-weight-light">{{item.title}}</div>
-            <span class="grey--text subheading text-capitalize">{{item.name}}&nbsp;-&nbsp;</span>
-            <span class="grey--text subheading text-capitalize">{{item.date}}&nbsp;-&nbsp;</span>
-            <a :href="item.link" style="color: #00BFA5;" class="subheading">News</a>
           </div>
         </v-card-title>
       </v-card>
+      <div class="mt-3">
+          <span class="grey--text subheading text-capitalize">{{item.name}}&nbsp;-&nbsp;</span>
+          <span class="grey--text subheading text-capitalize">{{item.date}}&nbsp;-&nbsp;</span>
+          <a :href="item.linkerTo" style="color: #00BFA5;" class="subheading">News</a>
+      </div>
     </v-flex>
   </v-layout>
 </v-container>
@@ -185,7 +188,7 @@
   <v-layout row wrap justify-space-between>
     <v-flex xs12>
       <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">contact us</h2>
-      <h4 class="title text-uppercase pt-5 pb-5">get in touch</h4>
+      <h4 class="title text-uppercase pt-5 pb-5 pl-3">get in touch</h4>
     </v-flex>
     <v-flex xs12 sm5>
         <v-card class="pa-3" elevation="1">
@@ -227,9 +230,9 @@
           value=""
         ></v-textarea>
         </v-card>
-        <v-btn depressed large color="teal accent-4" class="mt-5 mb-5" dark>Sen Message</v-btn>
+        <v-btn depressed large color="teal accent-4" class="mt-5 mb-5 ml-3" dark>Send Message</v-btn>
     </v-flex>
-    <v-flex xs12 sm6 mt-3>
+    <v-flex xs12 sm6 mt-3 pa-3>
       <div class="pb-3">
         <h4 class="title" style="color: #616161;">Adrees</h4>
         <p class="subheading pt-2 grey--text">203 Fake St. Mountain View, San Francisco, California, USA</p>
@@ -248,7 +251,7 @@
 
 <!------------------------- END CONTACT SECTION ----------------------->
 
-<!------------------------- END CONTACT SECTION ----------------------->
+<!------------------------- FOOTER ----------------------->
 
 <v-divider></v-divider>
 <v-container grid-list-xs mt-4 style="background: #EEEEEE;">
@@ -299,7 +302,7 @@
   </v-layout>
 </v-container>
 
-<!------------------------- END CONTACT SECTION ----------------------->
+<!------------------------- END FOOTER ----------------------->
 
 </div>
 </template>
@@ -347,42 +350,48 @@ export default {
           src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
           price: '400,000',
           button: true,
-          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet'
+          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet',
+          linkerTo: '/properties/propertie1'
         },
         { title: 'Favorite',
           address: 'New York - USA',
           src: house2,
           price: '700,000',
           button: true,
-          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet'
+          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet',
+          linkerTo: '/properties/propertie1'
         },
         { title: 'Best Home',
           address: 'Seattle - USA',
           src: house3,
           price: '800,000',
           button: true,
-          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet' 
+          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet',
+          linkerTo: '/properties/propertie1'
         },
         { title: 'Premium homes',
           address: 'Texas - USA',
           src: house4,
           price: '400,000',
           button: true,
-          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet' 
+          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet',
+          linkerTo: '/properties/propertie1' 
         },
         { title: 'Favorite',
           address: 'New York - USA',
           src: house5,
           price: '700,000',
           button: true,
-          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet' 
+          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet',
+          linkerTo: '/properties/propertie1' 
         },
         { title: 'Best Home',
           address: 'Seattle - USA',
           src: house6,
           price: '800,000',
           button: true,
-          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet' 
+          description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra. Eget arcu nunc amet',
+          linkerTo: '/properties/propertie1' 
         }
       ],
       agents: [
@@ -511,21 +520,21 @@ export default {
           title: 'popular real estate propierties for 2019',
           name: 'aaron holmes',
           date: 'jan 18, 2019',
-          link: 'https://www.google.com'
+          linkerTo: '/news/new1'
         },
         {
           src: carouselImg2,
           title: 'popular real estate propierties for 2019',
           name: 'olivia williams',
           date: 'march 20, 2019',
-          link: 'https://www.google.com'
+          linkerTo: '/news/new1'
         },
         {
           src: carouselImg1,
           title: 'popular real estate propierties for 2019',
           name: 'isabella moore',
           date: 'april 17, 2019',
-          link: 'https://www.google.com'
+          linkerTo: '/news/new1'
         }
       ]
     })

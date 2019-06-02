@@ -5,6 +5,8 @@
       :color="colorTheme"
       max-width="600"
       v-if="cardObject"
+      nuxt
+      :to="cardObject.linkerTo"
     >
 <!--------------- card's imagen --------------->
       <v-img
@@ -37,7 +39,6 @@
           color="teal accent-4"
           class="white--text"
           fab
-          large
           right
           top
           v-if="cardObject.button"

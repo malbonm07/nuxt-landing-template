@@ -13,8 +13,9 @@
       app
       height="120"
       color="transparent"
+      class="toolBar"
     >
-      <v-toolbar-title v-text="title" />
+      <nuxt-link to="/" style="color: black;"><v-toolbar-title v-text="title"/></nuxt-link>
       <v-spacer />
       <LanguageSwitcher>
       </LanguageSwitcher>
@@ -78,7 +79,7 @@
     >
     <v-layout row wrap justify-center>
       <v-flex shrink>
-        <span class="text-xs-center">&copy; 2019 Warehouse. All Rights Reserved. Design by malbnom07</span>
+        <span class="text-xs-center caption">&copy; 2019 Warehouse. All Rights Reserved. Design by malbnom07</span>
       </v-flex>
     </v-layout>
     </v-footer>
