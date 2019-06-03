@@ -1,6 +1,6 @@
 <template>
     <div>
-       <v-card elevation="0">
+       <v-card elevation="0" class="transpa">
            <v-img :src="agentObject.src" alt="agent image" style="border-radius: 3px;" :height="heightCard"></v-img>
            <v-card-title primary-title>
                <div class="headline">

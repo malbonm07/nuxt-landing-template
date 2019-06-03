@@ -16,18 +16,26 @@
       ref="barra"
       v-scroll="onScroll"
     >
-      <nuxt-link to="/" style="color: black;"><v-toolbar-title v-text="title"/></nuxt-link>
-      <v-spacer />
-      <LanguageSwitcher>
-      </LanguageSwitcher>
-      <v-card>
-              <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      > 
-        <v-icon>menu</v-icon>
-      </v-btn>
-      </v-card>
+        <nuxt-link to="/" style="color: black;"><v-toolbar-title v-text="title"/></nuxt-link>
+        <v-spacer />
+
+        <v-toolbar-items class="hidden-sm-and-down">
+          <div v-for="item in menu" :key="item.title"  height="100%" style="display: flex; align-items:center;" @click="probandoFuncion(item.idSection, options)">
+            <v-btn flat class="setToolButton">{{item.title}}</v-btn>
+          </div>
+        </v-toolbar-items>
+
+        <LanguageSwitcher class="setResponsive">
+        </LanguageSwitcher>
+
+        <v-card class="setResponsive">
+          <v-btn
+          icon
+          @click.stop="rightDrawer = !rightDrawer"
+          > 
+          <v-icon>menu</v-icon>
+          </v-btn>
+        </v-card>
     </v-toolbar>
 
 <!------- end Toolbar -------->
@@ -96,24 +104,21 @@
 import SpainFlag from '@/components/flags/flag-icon-es.vue';
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
 import Carousel from '@/components/Carousel.vue'
-import img1 from '@/static/imagens/img1.png'
-import img2 from '@/static/imagens/img2.png'
-import img3 from '@/static/imagens/img3.png'
+import img1 from '@/static/imagens/img1.jpeg'
+import img2 from '@/static/imagens/img2.jpeg'
 
 export default {
   components: {
     SpainFlag,
     LanguageSwitcher,
-    Carousel,
-    img1,
-    img2,
-    img3
+    Carousel
   },
   data() {
     return {
       setToolBarAnimation: {
         setHeight: '120',
-        setColor: 'transparent'
+        setColor: 'transparent',
+        setToolBarButtons: '100%'
       },
       options: {
           duration: '300',
@@ -134,31 +139,31 @@ export default {
         {
           icon: 'business',
           title: this.$i18n.t('pages.properties'),
-          to: '/inspire',
+          to: '/',
           idSection: '#properties'
         },
         {
           icon: 'group_work',
           title: this.$i18n.t('pages.agents'),
-          to: '/agents',
+          to: '/',
           idSection: '#agents'
         },
         {
           icon: 'sentiment_satisfied_alt',
           title: this.$i18n.t('pages.about'),
-          to: '/about',
+          to: '/',
           idSection: '#about'
         },
         {
           icon: 'fiber_new',
           title: this.$i18n.t('pages.news'),
-          to: '/news',
+          to: '/',
           idSection: '#news'
         },
         {
           icon: 'mail_outline',
           title: this.$i18n.t('pages.contacts'),
-          to: '/contact',
+          to: '/',
           idSection: '#contact'
         }
       ],
@@ -181,7 +186,7 @@ export default {
           },
           {
             id: '3',
-            src: img3,
+            src: img1,
             title: 'look at our news',
             jumbotron: true
           },
@@ -200,12 +205,26 @@ export default {
         this.setToolBarAnimation.setHeight = '120'
         this.setToolBarAnimation.setColor = 'transparent'
       }
+    },
+    probandoFuncion(elementID, options) {
+      // let routePromise = Promise.resolve(this.routeWatch);
+      // routePromise.then((value) => console.log(document.getElementById('about')))
+      // console.log(this.routeWatch)
+
+      // this.$watch(() => console.log(this.$route.name) )
+
+      // setTimeout(function(){ console.log(document.getElementById('about')) }, 3000);
+      // console.log(this.routeWatch)
+      // console.log('123')
+      // if(document.getElementById('pageDefault')) {
+      //   this.$vuetify.goTo(elementID, options)
+      // }
     }
   },
   computed: {
-    i18n() {
-      
-    }
+    // routeWatch() {
+    //   return this.$route.name
+    // }
   }
 }
 </script>

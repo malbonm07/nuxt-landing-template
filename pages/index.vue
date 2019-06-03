@@ -191,7 +191,7 @@
       <h4 class="title text-uppercase pt-5 pb-5 pl-3">get in touch</h4>
     </v-flex>
     <v-flex xs12 sm5>
-        <v-card class="pa-3" elevation="1">
+        <v-card class="pa-3 transpa" elevation="0">
           <v-text-field
             v-model="contactForm.name"
             outline
@@ -296,7 +296,6 @@
             <font-awesome-icon :icon="['fab', 'instagram']"  style="font-size: 20px;"/>
           </v-btn>
         </div>
-        <!-- <font-awesome-icon :icon="['fab', 'twitter']" class="icon alt" style="font-size: 52px"/> -->
       </div>
     </v-flex>
   </v-layout>
