@@ -360,21 +360,36 @@ export default {
           description:'real estate agent',
           src: person1,
           description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.',
-          delay: '100'
+          delay: '100',
+          socialMedia: {
+            linkedind: '',
+            twitter: '',
+            instragram: ''
+          }
         },
         {
           name: 'Olivia williams',
           description:'real estate agent',
           src: person2,
           description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.',
-          delay: '200'
+          delay: '200',
+          socialMedia: {
+            linkedind: '',
+            twitter: '',
+            instragram: ''
+          }
         },
         {
           name: 'isabella moore',
           description:'real estate agent',
           src: person3,
           description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.',
-          delay: '300'
+          delay: '300',
+          socialMedia: {
+            linkedind: '',
+            twitter: '',
+            instragram: ''
+          }
         }
       ],
       about: [
