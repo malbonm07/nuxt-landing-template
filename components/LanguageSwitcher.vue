@@ -1,10 +1,12 @@
 <template>
   <div class="text-xs-center">
-    <v-menu offset-y>
+    <v-menu offset-y class="transpa">
       <template v-slot:activator="{ on }">
         <v-btn
           v-on="on"
           @click="change()"
+          class="transpa"
+          elevation="0"
         >
         {{$t('language')}}
         </v-btn>

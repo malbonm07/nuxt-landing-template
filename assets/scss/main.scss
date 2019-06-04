@@ -43,8 +43,14 @@
 .setToolButton {
   height: 80px !important;
 }
+.setToolButton:before {
+  background: transparent !important;
+}
 .setToolButton:hover {
   color: #009688 !important;
+}
+.myActiveClass {
+  color: #26A69A;
 }
 // ########################### BASE ###########################
 // ########################### BASE ###########################

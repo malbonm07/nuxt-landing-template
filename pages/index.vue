@@ -5,7 +5,8 @@
 <v-container>
   <v-layout row wrap pt-5 id="properties">
     <v-flex xs12 sm6 md4 v-for="(card, i) in cards" :key="i" pa-2>
-        <Card :cardObject="card" :colorTheme="colorPropertiesCard" data-aos="fade-up">
+        <Card :cardObject="card" :colorTheme="colorPropertiesCard">
+          <!-- data-aos="fade-up" -->
           <template v-slot:header>
             {{card.title}}
           </template>
@@ -37,7 +38,10 @@
 <v-container>
   <v-layout row wrap id="agents">
     <v-flex xs12 sm6 md4 v-for="(agent, i) in agents" :key="i" pa-2>
-      <Card :cardObject="agent" :colorTheme="colorAgentsCard" data-aos="flip-up" :data-aos-delay="agent.delay">
+      <Card :cardObject="agent" :colorTheme="colorAgentsCard">
+
+<!-- data-aos="flip-up" :data-aos-delay="agent.delay" -->
+
         <template v-slot:title>
           <div style="text-align: center;">
             <h3 class="display-1 text-capitalize mb-2" style="color: #000;">{{agent.name}}</h3>
@@ -65,7 +69,10 @@
       </v-layout>
       <v-layout row wrap>
         <v-flex xs12 sm4 md4 v-for="(item, i) in about" :key="i">
-          <v-card color="transparent" elevation='0' class="pa-1" data-aos="flip-up">
+          <v-card color="transparent" elevation='0' class="pa-1">
+
+<!-- data-aos="flip-up" -->
+
             <div style="display:flex; justify-content: center;">
               <v-icon class="icon" color='#000'>{{item.icon}}</v-icon>
             </div>
@@ -126,7 +133,10 @@
       <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">services</h2>
     </v-flex>
     <v-flex xs12 sm6 md4 v-for="(service, i) in services" :key="i" pa-1>
-      <services :itemObject="service" data-aos="zoom-in" :data-aos-delay="service.delay">
+      <services :itemObject="service">
+
+<!-- data-aos="zoom-in" :data-aos-delay="service.delay" -->
+
       </Services>
     </v-flex>
   </v-layout>
@@ -158,7 +168,10 @@
       <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">news & events</h2>
     </v-flex>
     <v-flex xs12 sm4 v-for="(item,i) in news" :key="i" pa-2>
-      <v-card nuxt :to="item.linkerTo" data-aos="fade-up" :data-aos-delay="item.delay">
+      <v-card nuxt :to="item.linkerTo">
+
+<!-- data-aos="fade-up" :data-aos-delay="item.delay" -->
+
         <v-img
           :src="item.src"
           height="400px"

@@ -20,12 +20,16 @@
         <v-spacer />
 
         <v-toolbar-items class="hidden-sm-and-down">
-          <div v-for="item in menu" :key="item.title"  height="100%" style="display: flex; align-items:center;" @click="probandoFuncion(item.idSection, options)">
-            <v-btn flat class="setToolButton">{{item.title}}</v-btn>
+          <div v-for="(item) in menu" :key="item.title"  height="100%" style="display: flex; align-items:center;" @click="probandoFuncion(item.idSection, options)">
+            <v-btn flat class="setToolButton" 
+            nuxt :to="item.to"
+            >
+              <span>{{item.title}}</span>
+            </v-btn>
           </div>
         </v-toolbar-items>
 
-        <LanguageSwitcher class="setResponsive">
+        <LanguageSwitcher>
         </LanguageSwitcher>
 
         <v-card class="setResponsive">
@@ -36,6 +40,7 @@
           <v-icon>menu</v-icon>
           </v-btn>
         </v-card>
+
     </v-toolbar>
 
 <!------- end Toolbar -------->
@@ -54,11 +59,7 @@
 
 <!----------------------------- CONTENT VIEWS ----------------------------->
 
-    <!-- <v-content class="content">
-    <v-container> -->
         <nuxt />
-      <!-- </v-container>
-    </v-content> -->
 
 <!----------------------------- END CONTENT VIEWS ----------------------------->
 
@@ -71,11 +72,11 @@
       fixed
     >
       <v-list>
-        <v-list-tile v-for="item in menu" :key="item.title" @click="$vuetify.goTo(item.idSection, options)">
+        <v-list-tile v-for="item in menu" :key="item.title" @click="probandoFuncion(item.idSection, options)" nuxt :to="item.to">
           <v-list-tile-action>
-            <v-icon>{{item.icon}}</v-icon>
+            <v-icon style="color: #212121;">{{item.icon}}</v-icon>
           </v-list-tile-action>
-          <v-list-tile-title>{{item.title}}</v-list-tile-title>
+          <v-list-tile-title style="color: #212121;"><p>{{item.title}}</p></v-list-tile-title>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
@@ -115,6 +116,7 @@ export default {
   },
   data() {
     return {
+      activeClass: null,
       setToolBarAnimation: {
         setHeight: '120',
         setColor: 'transparent',
@@ -134,37 +136,43 @@ export default {
           icon: 'home',
           title: this.$i18n.t('pages.home'),
           to: '/',
-          idSection: '#topHome'
+          idSection: 'topHome',
+          activeClass: 'myActiveClass'
         },
         {
           icon: 'business',
           title: this.$i18n.t('pages.properties'),
           to: '/',
-          idSection: '#properties'
+          idSection: 'properties',
+          activeClass: 'myActiveClass'
         },
         {
           icon: 'group_work',
           title: this.$i18n.t('pages.agents'),
           to: '/',
-          idSection: '#agents'
+          idSection: 'agents',
+          activeClass: 'myActiveClass'
         },
         {
           icon: 'sentiment_satisfied_alt',
           title: this.$i18n.t('pages.about'),
           to: '/',
-          idSection: '#about'
+          idSection: 'about',
+          activeClass: 'myActiveClass'
         },
         {
           icon: 'fiber_new',
           title: this.$i18n.t('pages.news'),
           to: '/',
-          idSection: '#news'
+          idSection: 'news',
+          activeClass: 'myActiveClass'
         },
         {
           icon: 'mail_outline',
           title: this.$i18n.t('pages.contacts'),
           to: '/',
-          idSection: '#contact'
+          idSection: 'contact',
+          activeClass: 'myActiveClass'
         }
       ],
       miniVariant: false,
@@ -207,24 +215,29 @@ export default {
       }
     },
     probandoFuncion(elementID, options) {
-      // let routePromise = Promise.resolve(this.routeWatch);
-      // routePromise.then((value) => console.log(document.getElementById('about')))
-      // console.log(this.routeWatch)
-
-      // this.$watch(() => console.log(this.$route.name) )
-
-      // setTimeout(function(){ console.log(document.getElementById('about')) }, 3000);
-      // console.log(this.routeWatch)
-      // console.log('123')
-      // if(document.getElementById('pageDefault')) {
-      //   this.$vuetify.goTo(elementID, options)
-      // }
+      this.activeClass = 'myActiveClass'
+      if(document.getElementById(elementID)) {
+        this.$vuetify.goTo(`#${elementID}`, options)
+      }else {
+          setTimeout(() => {
+            if(document.getElementById(elementID)) {
+              this.$vuetify.goTo(`#${elementID}`, options)
+            }else {
+              return;
+            }
+            }, 1000)
+      }
     }
   },
   computed: {
-    // routeWatch() {
-    //   return this.$route.name
-    // }
+    routeWatch() {
+      return this.$watch(() => this.$route.name )
+    }
+  },
+  watch: {
+    mirarorRoute() {
+      return this.$route.name
+    }
   }
 }
 </script>
