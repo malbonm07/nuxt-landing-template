@@ -98,5 +98,6 @@ export default {
     */
     extend(config, ctx) {
     }
-  }
+  },
+  
 }

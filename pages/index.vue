@@ -264,58 +264,6 @@
 
 <!------------------------- END CONTACT SECTION ----------------------->
 
-<!------------------------- FOOTER ----------------------->
-
-<v-divider></v-divider>
-<v-container grid-list-xs mt-4 style="background: #EEEEEE;">
-  <v-layout row wrap justify-space-between id="contact">
-    <v-flex xs12 sm4>
-      <h4 class="title text-uppercase font-weight-regular pb-4">about us</h4>
-      <p class="subheading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
-    </v-flex>
-    <v-flex xs12 sm2>
-      <h4 class="title text-uppercase font-weight-regular pb-4">quick links</h4>
-      <div>
-        <ul>
-          <li class="pb-2"><a href="" class="subheading font-weight-medium" style="color: #616161">About Us</a></li>
-          <li class="pb-2"><a href="" class="subheading font-weight-medium" style="color: #616161">Services</a></li>
-          <li class="pb-2"><a href="" class="subheading font-weight-medium" style="color: #616161">Testimonials</a></li>
-          <li class="pb-4"><a href="" class="subheading font-weight-medium" style="color: #616161">Contact Us</a></li>
-        </ul>
-      </div>
-    </v-flex>
-    <v-flex xs12 sm4>
-      <h4 class="title text-uppercase font-weight-regular pb-4">subscribe newsletter</h4>
-      <v-text-field
-            color="teal accent-4"
-            outline
-            label="Enter Email"
-            append-icon="email"
-      ></v-text-field>
-      <v-btn block color="teal accent-4" dark>Send</v-btn>
-      <div class="mb-5">
-        <h4 class="title text-uppercase font-weight-regular pb-4 mt-4">follow us</h4>
-        <div>
-          <v-btn flat icon color="gray">
-            <font-awesome-icon :icon="['fab', 'linkedin-in']" style="font-size: 20px;"/>
-          </v-btn>
-          <v-btn flat icon color="gray">
-            <font-awesome-icon :icon="['fab', 'facebook-f']" style="font-size: 20px;"/>
-          </v-btn>
-          <v-btn flat icon color="gray">
-            <font-awesome-icon :icon="['fab', 'twitter']"  style="font-size: 20px;"/>
-          </v-btn>
-          <v-btn flat icon color="gray">
-            <font-awesome-icon :icon="['fab', 'instagram']"  style="font-size: 20px;"/>
-          </v-btn>
-        </div>
-      </div>
-    </v-flex>
-  </v-layout>
-</v-container>
-
-<!------------------------- END FOOTER ----------------------->
-
 </div>
 </template>
 
