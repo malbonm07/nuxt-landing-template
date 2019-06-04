@@ -20,11 +20,11 @@
         <v-spacer />
 
         <v-toolbar-items class="hidden-sm-and-down">
-          <div v-for="(item) in menu" :key="item.title"  height="100%" style="display: flex; align-items:center;" @click="probandoFuncion(item.idSection, options)">
+          <div v-for="(item) in menu" :key="item.title"  height="100%" style="display: flex; align-items:center;" @click="customGoTo(item.idSection, options)">
             <v-btn flat class="setToolButton" 
             nuxt :to="item.to"
             >
-              <span>{{item.title}}</span>
+              <span>{{$t(item.title)}}</span>
             </v-btn>
           </div>
         </v-toolbar-items>
@@ -72,11 +72,11 @@
       fixed
     >
       <v-list>
-        <v-list-tile v-for="item in menu" :key="item.title" @click="probandoFuncion(item.idSection, options)" nuxt :to="item.to">
+        <v-list-tile v-for="item in menu" :key="item.title" @click="customGoTo(item.idSection, options)" nuxt :to="item.to">
           <v-list-tile-action>
             <v-icon style="color: #212121;">{{item.icon}}</v-icon>
           </v-list-tile-action>
-          <v-list-tile-title style="color: #212121;"><p>{{item.title}}</p></v-list-tile-title>
+          <v-list-tile-title style="color: #212121;"><p>{{$t(item.title)}}</p></v-list-tile-title>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
@@ -95,9 +95,17 @@
       </v-flex>
     </v-layout>
     </v-footer>
-
+   
 <!-----------------------------END FOOTER ----------------------------->
-
+    <div ref="goupbutton" class="goUpButton">
+      <v-btn fab dark outline color="#E65100"
+        @click="$vuetify.goTo('#topHome', options)"
+      >
+        <v-icon dark>
+          arrow_upward
+        </v-icon>
+      </v-btn>
+    </div>
   </v-app>
 </template>
 
@@ -134,42 +142,42 @@ export default {
       menu: [
         {
           icon: 'home',
-          title: this.$i18n.t('pages.home'),
+          title: 'home',
           to: '/',
           idSection: 'topHome',
           activeClass: 'myActiveClass'
         },
         {
           icon: 'business',
-          title: this.$i18n.t('pages.properties'),
+          title: 'properties',
           to: '/',
           idSection: 'properties',
           activeClass: 'myActiveClass'
         },
         {
           icon: 'group_work',
-          title: this.$i18n.t('pages.agents'),
+          title: 'agents',
           to: '/',
           idSection: 'agents',
           activeClass: 'myActiveClass'
         },
         {
           icon: 'sentiment_satisfied_alt',
-          title: this.$i18n.t('pages.about'),
+          title: 'about',
           to: '/',
           idSection: 'about',
           activeClass: 'myActiveClass'
         },
         {
           icon: 'fiber_new',
-          title: this.$i18n.t('pages.news'),
+          title: 'news',
           to: '/',
           idSection: 'news',
           activeClass: 'myActiveClass'
         },
         {
           icon: 'mail_outline',
-          title: this.$i18n.t('pages.contacts'),
+          title: 'contacts',
           to: '/',
           idSection: 'contact',
           activeClass: 'myActiveClass'
@@ -183,19 +191,19 @@ export default {
           {
             id: '1',
             src: img1,
-            title: 'find your perfect property',
+            title: 'carouselTitle1',
             jumbotron: true
           },
           {
             id: '2',
             src: img2,
-            title: 'buy & sell properties here',
+            title: 'carouselTitle2',
             jumbotron: true
           },
           {
             id: '3',
             src: img1,
-            title: 'look at our news',
+            title: 'carouselTitle3',
             jumbotron: true
           },
       ]
@@ -209,12 +217,14 @@ export default {
       if(window.scrollY > 500) {
         this.setToolBarAnimation.setHeight = '80'
         this.setToolBarAnimation.setColor = 'white'
+        this.$refs.goupbutton.classList.add('appearButton')
       }else if(window.scrollY < 550) {
         this.setToolBarAnimation.setHeight = '120'
         this.setToolBarAnimation.setColor = 'transparent'
+        this.$refs.goupbutton.classList.remove('appearButton')
       }
     },
-    probandoFuncion(elementID, options) {
+    customGoTo(elementID, options) {
       this.activeClass = 'myActiveClass'
       if(document.getElementById(elementID)) {
         this.$vuetify.goTo(`#${elementID}`, options)
@@ -227,16 +237,6 @@ export default {
             }
             }, 1000)
       }
-    }
-  },
-  computed: {
-    routeWatch() {
-      return this.$watch(() => this.$route.name )
-    }
-  },
-  watch: {
-    mirarorRoute() {
-      return this.$route.name
     }
   }
 }

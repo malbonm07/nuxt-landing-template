@@ -5,7 +5,7 @@
 <v-container>
   <v-layout row wrap pt-5 id="properties">
     <v-flex xs12 sm6 md4 v-for="(card, i) in cards" :key="i" pa-2>
-        <Card :cardObject="card" :colorTheme="colorPropertiesCard">
+        <Card :cardObject="card" :colorTheme="colorPropertiesCard" data-aos="fade-up">
           <!-- data-aos="fade-up" -->
           <template v-slot:header>
             {{card.title}}
@@ -38,7 +38,7 @@
 <v-container>
   <v-layout row wrap id="agents">
     <v-flex xs12 sm6 md4 v-for="(agent, i) in agents" :key="i" pa-2>
-      <Card :cardObject="agent" :colorTheme="colorAgentsCard">
+      <Card :cardObject="agent" :colorTheme="colorAgentsCard" data-aos="flip-up" :data-aos-delay="agent.delay">
 
 <!-- data-aos="flip-up" :data-aos-delay="agent.delay" -->
 
@@ -69,7 +69,7 @@
       </v-layout>
       <v-layout row wrap>
         <v-flex xs12 sm4 md4 v-for="(item, i) in about" :key="i">
-          <v-card color="transparent" elevation='0' class="pa-1">
+          <v-card color="transparent" elevation='0' class="pa-1" data-aos="flip-up">
 
 <!-- data-aos="flip-up" -->
 
@@ -133,7 +133,7 @@
       <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">services</h2>
     </v-flex>
     <v-flex xs12 sm6 md4 v-for="(service, i) in services" :key="i" pa-1>
-      <services :itemObject="service">
+      <services :itemObject="service" data-aos="zoom-in" :data-aos-delay="service.delay">
 
 <!-- data-aos="zoom-in" :data-aos-delay="service.delay" -->
 
@@ -168,7 +168,7 @@
       <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">news & events</h2>
     </v-flex>
     <v-flex xs12 sm4 v-for="(item,i) in news" :key="i" pa-2>
-      <v-card nuxt :to="item.linkerTo">
+      <v-card nuxt :to="item.linkerTo" data-aos="fade-up" :data-aos-delay="item.delay" >
 
 <!-- data-aos="fade-up" :data-aos-delay="item.delay" -->
 
@@ -475,42 +475,42 @@ export default {
           icon: 'search',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '100'
+          delay: '50'
         },
         {
           title: 'buy property',
           icon: 'attach_money',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '200'
+          delay: '100'
         },
         {
           title: 'beautiful home',
           icon: 'home',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '300'
+          delay: '150'
         },
         {
           title: 'buildings & lands',
           icon: 'domain',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '400'
+          delay: '200'
         },
         {
           title: 'property locator',
           icon: 'location_on',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '500'
+          delay: '250'
         },
         {
           title: 'mobile apps',
           icon: 'stay_current_portrait',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '600'
+          delay: '300'
         }
       ],
       testimonials: [

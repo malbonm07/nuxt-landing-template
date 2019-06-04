@@ -5,7 +5,6 @@
         <v-btn
           v-on="on"
           @click="change()"
-          class="transpa"
           elevation="0"
         >
         {{$t('language')}}
