@@ -29,11 +29,6 @@
 </template>
 
 <script>
-// import esFlag from '@/components/flags/flag-icon-es.vue';
-// import usFlag from '@/components/flags/flag-icon-us.vue';
-import esIcon from '@/static/flags/es.svg'
-import usIcon from '@/static/flags/us.svg'
-
   export default {
     components: {
     },

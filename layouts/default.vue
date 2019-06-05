@@ -29,8 +29,8 @@
           </div>
         </v-toolbar-items>
 
-        <LanguageSwitcher>
-        </LanguageSwitcher>
+        <!-- <LanguageSwitcher>
+        </LanguageSwitcher> -->
 
         <v-card class="setResponsive">
           <v-btn
@@ -41,20 +41,17 @@
           </v-btn>
         </v-card>
 
-    </v-toolbar>
+      </v-toolbar>
 
 <!------- end Toolbar -------->
 
 <!------- custom carousel -------->
 
-    <div>
-      <Carousel :itemsArray="items">
-        Show now
-      </Carousel>
-      <!-- <div class="jumbotron">
-        <div>dasdsadsa</div>
-      </div> -->
-    </div>
+      <div>
+        <Carousel :itemsArray="items">
+          Show now
+        </Carousel>
+      </div>
 
 
 <!------- end custom carousel -------->
@@ -285,7 +282,7 @@ export default {
       }
     },
     customGoTo(elementID, options) {
-      this.activeClass = 'myActiveClass'
+
       if(document.getElementById(elementID)) {
         this.$vuetify.goTo(`#${elementID}`, options)
       }else {
@@ -297,6 +294,12 @@ export default {
             }
             }, 1000)
       }
+    },
+  },
+  computed: {
+    lang() {
+      let language = 'en'
+      return language
     }
   }
 }

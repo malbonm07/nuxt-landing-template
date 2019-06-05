@@ -72,7 +72,7 @@ export default {
       ],
       lazy: true,
       langDir: 'lang/',
-      defaultLocale: 'es',
+      defaultLocale: 'en',
     }],
   ],
   /*
