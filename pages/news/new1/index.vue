@@ -23,11 +23,11 @@
                 </div>
                 <div>
                     <p class="subheading">Categories: 
-                        <a :href="category.link" v-for="(category, i) in categoriesLinks" :key="i" class="subheading text-capitalize" style="color: #00BFA5">
+                        <a :href="category.link" v-for="category in categoriesLinks" :key="category.name" class="subheading text-capitalize" style="color: #00BFA5">
                             {{category.title}}&nbsp;
                         </a>
                         Tags:
-                        <a :href="tag.link" v-for="(tag, i) in categoriesTags" :key="i" class="subheading text-capitalize" style="color: #00BFA5">
+                        <a :href="tag.link" v-for="tag in categoriesTags" :key="tag.title" class="subheading text-capitalize" style="color: #00BFA5">
                             {{tag.title}}&nbsp;
                         </a>
                     </p>
@@ -56,12 +56,16 @@
                     <!-- </v-card> -->
                 </div>
                 <div class="mb-4">
-                    <CategoriesTable :propTableHeaders="headers" :propTableCategories="categories">
+                    <CategoriesTable :propTableHeaders="headers" :propTableCategories="categories"
+                    
+                    >
 
                     </CategoriesTable>
                 </div>
                 <div class="mb-4">
-                    <ContactAgent :agentObject="agent" :heightCard="agent.heightAgentCard">
+                    <ContactAgent :agentObject="agent" :heightCard="agent.heightAgentCard"
+                    class="transparentCard"
+                    >
                         <template v-slot:butname>
                             Learn More
                         </template>

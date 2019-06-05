@@ -27,7 +27,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: '~/components/loading.vue',
+  loading: {},
 
   /*
   ** Global CSS
@@ -45,7 +45,8 @@ export default {
     '@/plugins/vuetify',
     '@/plugins/fontawesome.js',
     { src: "@/plugins/aos.js", ssr: false },
-    '@/directives/scroll.js'
+    '@/directives/scroll.js',
+    '@/plugins/vLazyImg',
   ],
 
   /*
@@ -97,5 +98,6 @@ export default {
     */
     extend(config, ctx) {
     }
-  }
+  },
+  
 }

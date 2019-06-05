@@ -5,7 +5,8 @@
 <v-container>
   <v-layout row wrap pt-5 id="properties">
     <v-flex xs12 sm6 md4 v-for="(card, i) in cards" :key="i" pa-2>
-        <Card :cardObject="card" :colorTheme="colorPropertiesCard" data-aos="fade-up">
+        <Card :cardObject="card" :colorTheme="colorPropertiesCard">
+          <!-- data-aos="fade-up" -->
           <template v-slot:header>
             {{card.title}}
           </template>
@@ -38,6 +39,9 @@
   <v-layout row wrap id="agents">
     <v-flex xs12 sm6 md4 v-for="(agent, i) in agents" :key="i" pa-2>
       <Card :cardObject="agent" :colorTheme="colorAgentsCard" data-aos="flip-up" :data-aos-delay="agent.delay">
+
+<!-- data-aos="flip-up" :data-aos-delay="agent.delay" -->
+
         <template v-slot:title>
           <div style="text-align: center;">
             <h3 class="display-1 text-capitalize mb-2" style="color: #000;">{{agent.name}}</h3>
@@ -66,6 +70,9 @@
       <v-layout row wrap>
         <v-flex xs12 sm4 md4 v-for="(item, i) in about" :key="i">
           <v-card color="transparent" elevation='0' class="pa-1" data-aos="flip-up">
+
+<!-- data-aos="flip-up" -->
+
             <div style="display:flex; justify-content: center;">
               <v-icon class="icon" color='#000'>{{item.icon}}</v-icon>
             </div>
@@ -127,6 +134,9 @@
     </v-flex>
     <v-flex xs12 sm6 md4 v-for="(service, i) in services" :key="i" pa-1>
       <services :itemObject="service" data-aos="zoom-in" :data-aos-delay="service.delay">
+
+<!-- data-aos="zoom-in" :data-aos-delay="service.delay" -->
+
       </Services>
     </v-flex>
   </v-layout>
@@ -158,7 +168,10 @@
       <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">news & events</h2>
     </v-flex>
     <v-flex xs12 sm4 v-for="(item,i) in news" :key="i" pa-2>
-      <v-card nuxt :to="item.linkerTo" data-aos="fade-up" :data-aos-delay="item.delay">
+      <v-card nuxt :to="item.linkerTo" data-aos="fade-up" :data-aos-delay="item.delay" >
+
+<!-- data-aos="fade-up" :data-aos-delay="item.delay" -->
+
         <v-img
           :src="item.src"
           height="400px"
@@ -191,7 +204,7 @@
       <h4 class="title text-uppercase pt-5 pb-5 pl-3">get in touch</h4>
     </v-flex>
     <v-flex xs12 sm5>
-        <v-card class="pa-3" elevation="1">
+        <v-card class="pa-3 transpa" elevation="0">
           <v-text-field
             v-model="contactForm.name"
             outline
@@ -250,59 +263,6 @@
 </v-container>
 
 <!------------------------- END CONTACT SECTION ----------------------->
-
-<!------------------------- FOOTER ----------------------->
-
-<v-divider></v-divider>
-<v-container grid-list-xs mt-4 style="background: #EEEEEE;">
-  <v-layout row wrap justify-space-between id="contact">
-    <v-flex xs12 sm4>
-      <h4 class="title text-uppercase font-weight-regular pb-4">about us</h4>
-      <p class="subheading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
-    </v-flex>
-    <v-flex xs12 sm2>
-      <h4 class="title text-uppercase font-weight-regular pb-4">quick links</h4>
-      <div>
-        <ul>
-          <li class="pb-2"><a href="" class="subheading font-weight-medium" style="color: #616161">About Us</a></li>
-          <li class="pb-2"><a href="" class="subheading font-weight-medium" style="color: #616161">Services</a></li>
-          <li class="pb-2"><a href="" class="subheading font-weight-medium" style="color: #616161">Testimonials</a></li>
-          <li class="pb-4"><a href="" class="subheading font-weight-medium" style="color: #616161">Contact Us</a></li>
-        </ul>
-      </div>
-    </v-flex>
-    <v-flex xs12 sm4>
-      <h4 class="title text-uppercase font-weight-regular pb-4">subscribe newsletter</h4>
-      <v-text-field
-            color="teal accent-4"
-            outline
-            label="Enter Email"
-            append-icon="email"
-      ></v-text-field>
-      <v-btn block color="teal accent-4" dark>Send</v-btn>
-      <div class="mb-5">
-        <h4 class="title text-uppercase font-weight-regular pb-4 mt-4">follow us</h4>
-        <div>
-          <v-btn flat icon color="gray">
-            <font-awesome-icon :icon="['fab', 'linkedin-in']" style="font-size: 20px;"/>
-          </v-btn>
-          <v-btn flat icon color="gray">
-            <font-awesome-icon :icon="['fab', 'facebook-f']" style="font-size: 20px;"/>
-          </v-btn>
-          <v-btn flat icon color="gray">
-            <font-awesome-icon :icon="['fab', 'twitter']"  style="font-size: 20px;"/>
-          </v-btn>
-          <v-btn flat icon color="gray">
-            <font-awesome-icon :icon="['fab', 'instagram']"  style="font-size: 20px;"/>
-          </v-btn>
-        </div>
-        <!-- <font-awesome-icon :icon="['fab', 'twitter']" class="icon alt" style="font-size: 52px"/> -->
-      </div>
-    </v-flex>
-  </v-layout>
-</v-container>
-
-<!------------------------- END FOOTER ----------------------->
 
 </div>
 </template>
@@ -400,21 +360,36 @@ export default {
           description:'real estate agent',
           src: person1,
           description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.',
-          delay: '100'
+          delay: '100',
+          socialMedia: {
+            linkedind: '',
+            twitter: '',
+            instragram: ''
+          }
         },
         {
           name: 'Olivia williams',
           description:'real estate agent',
           src: person2,
           description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.',
-          delay: '200'
+          delay: '200',
+          socialMedia: {
+            linkedind: '',
+            twitter: '',
+            instragram: ''
+          }
         },
         {
           name: 'isabella moore',
           description:'real estate agent',
           src: person3,
           description: 'Lorem ipsum dolor sit amet, aenean sed odio in ipsum euismod pharetra.',
-          delay: '300'
+          delay: '300',
+          socialMedia: {
+            linkedind: '',
+            twitter: '',
+            instragram: ''
+          }
         }
       ],
       about: [
@@ -463,42 +438,42 @@ export default {
           icon: 'search',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '100'
+          delay: '50'
         },
         {
           title: 'buy property',
           icon: 'attach_money',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '200'
+          delay: '100'
         },
         {
           title: 'beautiful home',
           icon: 'home',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '300'
+          delay: '150'
         },
         {
           title: 'buildings & lands',
           icon: 'domain',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '400'
+          delay: '200'
         },
         {
           title: 'property locator',
           icon: 'location_on',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '500'
+          delay: '250'
         },
         {
           title: 'mobile apps',
           icon: 'stay_current_portrait',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
           link: 'https://www.google.com',
-          delay: '600'
+          delay: '300'
         }
       ],
       testimonials: [

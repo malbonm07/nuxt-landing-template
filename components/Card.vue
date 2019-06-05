@@ -10,7 +10,7 @@
     >
 <!--------------- card's imagen --------------->
       <v-img
-        :aspect-ratio="16/9"
+        :aspect-ratio="12/9"
         :src="cardObject.src"
       >
         <div v-if="cardObject.button">
@@ -62,7 +62,20 @@
       </v-card-text>
 
 <!--------------- end card's imagen --------------->
-
+      <div v-if="cardObject.socialMedia">
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn flat icon color="#263238">
+            <font-awesome-icon :icon="['fab', 'linkedin-in']" style="font-size: 20px;"/>
+          </v-btn>
+          <v-btn flat icon color="#263238">
+            <font-awesome-icon :icon="['fab', 'twitter']"  style="font-size: 20px;"/>
+          </v-btn>
+          <v-btn flat icon color="#263238">
+            <font-awesome-icon :icon="['fab', 'instagram']"  style="font-size: 20px;"/>
+          </v-btn>
+        </v-card-actions>
+      </div>
     </v-card>
  </v-hover>
 </template>

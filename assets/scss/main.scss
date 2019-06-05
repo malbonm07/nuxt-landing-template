@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 .page-enter-active, .page-leave-active {
     transition: opacity .5s;
   }
   .page-enter, .page-leave-to {
     opacity: 0;
   }
+=======
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,600&display=swap');
+
+// ############################################################
+// ######################## SET ITEMS #########################
+// ############################################################
+>>>>>>> miguel
 .flag {
   width: 15px;
   padding-top: 5px;
@@ -11,26 +19,53 @@
 .icon {
   font-size: 70px !important;
 }
-.services {
-  font-size: 50px !important;
-  position: relative;
-  z-index: 5;
+
+.transpa {
+  background: transparent !important;
 }
-.services:after {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: #00BFA5;
-  opacity: .3;
-  top: -15px;
-  left: -15px;
-  border-radius: 50%;
-  z-index: 1;
+
+.setResponsive {
+  @media only screen and (min-width: 960px) {
+    display: none !important;
+  }
 }
+.setToolButton {
+  height: 80px !important;
+}
+.setToolButton:before {
+  background: transparent !important;
+}
+.setToolButton:hover {
+  color: #009688 !important;
+}
+.myActiveClass {
+  color: #26A69A;
+}
+.goUpButton {
+  position: fixed !important;
+  right: 1%;
+  bottom: 5%;
+  display: none;
+  z-index: 100;
+
+}
+.appearButton {
+  display: block !important;
+}
+.jumbotron{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column;
+}
+// ############################################################
+// ###################### END SET ITEM ########################
+// ############################################################
+
+
+// ############################################################
 // ########################### BASE ###########################
-// ########################### BASE ###########################
-// ########################### BASE ###########################
+// ############################################################
 
 a {
   text-decoration: none;
@@ -46,6 +81,34 @@ ul {
   margin: 0;
 }
 
+// ############################################################
+// ########################### END BASE #######################
+// ############################################################
+
+
+// ############################################################
+// ########################### SERVICES #######################
+// ############################################################
+.services {
+  font-size: 50px !important;
+  position: relative;
+  z-index: 5;
+}
+.services:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #00BFA5;
+  opacity: .25;
+  top: -10px;
+  left: -10px;
+  border-radius: 50%;
+  z-index: 1;
+}
+// ############################################################
+// ########################### END SERVICES #######################
+// ############################################################
 
 
 // ########################### HEADER ###########################
@@ -71,14 +134,6 @@ ul {
   position: absolute;
   width: 100%;
 }
-// .v-card--reveal {
-//   align-items: center;
-//   bottom: 0;
-//   justify-content: center;
-//   opacity: .75 !important;
-//   position: absolute;
-//   width: 100%;
-// }
 .v-cardtext--reveal {
   background: #333;
 }
@@ -86,19 +141,6 @@ ul {
 .content {
   padding: 50px 0 50px 0 !important;
 }
-
-// ########################### ABOUT ###########################
-// ########################### ABOUT ###########################
-// ########################### ABOUT ###########################
-
-// .about-section {
-//   width: 100% !important;
-// }
-
-
-// ########################### END ABOUT ###########################
-// ########################### END ABOUT ###########################
-// ########################### END ABOUT ###########################
 
 // ###########################  NEWS ###########################
 // ###########################  NEWS ###########################
@@ -111,3 +153,34 @@ ul {
 // ########################### END NEWS ###########################
 // ########################### END NEWS ###########################
 // ########################### END NEWS ###########################
+
+
+// ############################################################
+// ######################## ERROR PAGE #########################
+// ############################################################
+
+.errorPage {
+  background: #EEEEEE;
+  height: 100vh;
+}
+
+// ############################################################
+// ######################## SET ERROR PAGE #########################
+// ############################################################
+
+
+
+// ########################### ANIMATIONS ###########################
+// ########################### ANIMATIONS ###########################
+// ########################### ANIMATIONS ###########################
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
+
+// ########################### END ANIMATIONS ###########################
+// ########################### END ANIMATIONS ###########################
+// ########################### END ANIMATIONS ###########################

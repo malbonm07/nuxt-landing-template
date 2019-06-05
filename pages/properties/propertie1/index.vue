@@ -22,6 +22,12 @@
                     </template>
                 </ContactAgent>
             </v-flex>
+            <!-- <v-flex xs12>
+                  <v-lazy-image
+    src="https://cdn-images-1.medium.com/max/1600/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+    src-placeholder="https://cdn-images-1.medium.com/max/80/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+    />
+            </v-flex> -->
         </v-layout>
     </v-container>
 </template>
@@ -58,5 +64,11 @@ export default {
 </script>
 
 <style>
-
+    .v-lazy-image {
+  filter: blur(10px);
+  transition: filter 0.7s;
+}
+.v-lazy-image-loaded {
+  filter: blur(0);
+}
 </style>
