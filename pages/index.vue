@@ -5,7 +5,7 @@
 <v-container>
   <v-layout row wrap pt-5 id="properties">
     <v-flex xs12 sm6 md4 v-for="(card, i) in cards" :key="i" pa-2>
-        <Card :cardObject="card" :colorTheme="colorPropertiesCard" data-aos="fade-up">
+        <Card :cardObject="card" :colorTheme="colorPropertiesCard">
           <!-- data-aos="fade-up" -->
           <template v-slot:header>
             {{card.title}}

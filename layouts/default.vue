@@ -47,9 +47,15 @@
 
 <!------- custom carousel -------->
 
-    <Carousel :itemsArray="items">
-      Show now
-    </Carousel>
+    <div>
+      <Carousel :itemsArray="items">
+        Show now
+      </Carousel>
+      <!-- <div class="jumbotron">
+        <div>dasdsadsa</div>
+      </div> -->
+    </div>
+
 
 <!------- end custom carousel -------->
 
