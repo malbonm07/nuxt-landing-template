@@ -28,7 +28,7 @@
 <v-container>
 <v-layout row wrap pt-5 pb-2>
   <v-flex xs12>
-    <h2 class='display-3' style="color: #00BFA5;">REAL ESTATE AGENTS</h2>
+    <h2 class='display-3 text-xs-center text-sm-left' style="color: #00BFA5;">REAL ESTATE AGENTS</h2>
     <h5 class="headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
   </v-flex>
 </v-layout>
@@ -130,7 +130,7 @@
 <v-container grid-list-xs>
   <v-layout row wrap>
     <v-flex xs12>
-      <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">services</h2>
+      <h2 class="display-3 text-uppercase pb-4 text-xs-center" style="color: #00BFA5;">services</h2>
     </v-flex>
     <v-flex xs12 sm6 md4 v-for="(service, i) in services" :key="i" pa-1>
       <services :itemObject="service" data-aos="zoom-in" :data-aos-delay="service.delay">
@@ -149,7 +149,7 @@
 <v-container grid-list-xs>
   <v-layout row wrap>
     <v-flex xs12>
-      <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">testimonial</h2>
+      <h2 class="display-3 text-uppercase pb-4 text-xs-center" style="color: #00BFA5;">testimonial</h2>
     </v-flex>
     <v-flex xs12 sm6 v-for="(testimony, i) in testimonials" :key="i" class="pa-1">
       <Testimonial :itemObject="testimony">
@@ -165,13 +165,10 @@
 <v-container grid-list-xs>
   <v-layout row wrap id="news">
     <v-flex xs12>
-      <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">news & events</h2>
+      <h2 class="display-3 text-uppercase pb-4 text-xs-center" style="color: #00BFA5;">news & events</h2>
     </v-flex>
-    <v-flex xs12 sm4 v-for="(item,i) in news" :key="i" pa-2>
+    <v-flex xs12 sm6 md4 v-for="(item,i) in news" :key="i" pa-2>
       <v-card nuxt :to="item.linkerTo" data-aos="fade-up" :data-aos-delay="item.delay" >
-
-<!-- data-aos="fade-up" :data-aos-delay="item.delay" -->
-
         <v-img
           :src="item.src"
           height="400px"
@@ -200,7 +197,7 @@
 <v-container grid-list-xs>
   <v-layout row wrap justify-space-between id="about">
     <v-flex xs12>
-      <h2 class="display-3 text-uppercase pb-4" style="color: #00BFA5;">contact us</h2>
+      <h2 class="display-3 text-uppercase pb-4 text-xs-center text-sm-left" style="color: #00BFA5;">contact us</h2>
       <h4 class="title text-uppercase pt-5 pb-5 pl-3">get in touch</h4>
     </v-flex>
     <v-flex xs12 sm5>
@@ -245,7 +242,7 @@
         </v-card>
         <v-btn depressed large color="teal accent-4" class="mt-5 mb-5 ml-3" dark>Send Message</v-btn>
     </v-flex>
-    <v-flex xs12 sm6 mt-3 pa-3>
+    <v-flex xs12 sm6 mt-3 pr-3 pl-3>
       <div class="pb-3">
         <h4 class="title" style="color: #616161;">Adrees</h4>
         <p class="subheading pt-2 grey--text">203 Fake St. Mountain View, San Francisco, California, USA</p>
@@ -480,22 +477,32 @@ export default {
         {
           name: 'allison holmes',
           avatar: avatar1,
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
         },
         {
           name: 'aiden russell',
           avatar: avatar2,
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
         },
         {
           name: 'charles morgan',
           avatar: avatar3,
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
         },
         {
           name: 'curt rayels',
           avatar: avatar4,
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
+        },
+        {
+          name: 'charles morgan',
+          avatar: avatar3,
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
+        },
+        {
+          name: 'curt rayels',
+          avatar: avatar4,
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
         }
       ],
       news: [

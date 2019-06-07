@@ -4,7 +4,7 @@
         >
         <v-card  elevation="0" height="500px" width="100%" v-if="item.jumbotron" class="transpa">
           <v-responsive  class="jumbotron">
-            <v-card-text style="margin-top: 130px;">
+            <v-card-text style="margin-top: 110px;">
                   <h4 class="display-2 text-xs-center text-uppercase font-weight-medium mt-2">
                     {{$t(item.title)}}
                   </h4>
@@ -13,7 +13,7 @@
                     {{$t('carouselSubTitle')}} <a href="https://malbonm07.github.io/miguelalonsomarroquin/" class="font-weight-medium" style="color: #00BFA5">{{$t('myWeb')}}</a>
                   </h3>
                   </div>
-                  <div class="mt-5" style="text-align: center;">
+                  <div class="mt-3" style="text-align: center;">
                     <v-btn large color="teal accent-4">
                         <slot></slot>
                     </v-btn>

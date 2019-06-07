@@ -44,7 +44,7 @@
 
 <!-------------------------------------- POST BLOG -------------------------------------->
 
-            <v-flex xs12 sm3>
+            <v-flex xs12 sm4 md3 class="pa-1">
                 <div class="mb-2">
                     <!-- <v-card class="pa-3" elevation="0"> -->
                         <v-text-field
@@ -143,7 +143,7 @@ export default {
             posts: '42'
           },
           {
-            name: 'web development',
+            name: 'web dev.',
             posts: '14'
           },
         ],
