@@ -2,8 +2,10 @@ import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import pkg from './package'
 
 export default {
-  mode: 'universal',
-
+  mode: 'spa',
+  router: {
+     base: '/nuxt-gh-pages/'
+   },
   /*
   ** Headers of the page
   */
