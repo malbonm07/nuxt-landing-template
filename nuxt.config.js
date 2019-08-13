@@ -4,7 +4,7 @@ import pkg from './package'
 export default {
   mode: 'spa',
   router: {
-     base: '/nuxt-gh-pages/'
+     base: '/nuxt-landing-template/'
    },
   /*
   ** Headers of the page

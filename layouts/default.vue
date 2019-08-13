@@ -29,9 +29,6 @@
           </div>
         </v-toolbar-items>
 
-        <!-- <LanguageSwitcher>
-        </LanguageSwitcher> -->
-
         <v-card class="setResponsive">
           <v-btn
           icon

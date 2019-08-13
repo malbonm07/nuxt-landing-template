@@ -28,8 +28,8 @@
 <v-container>
 <v-layout row wrap pt-5 pb-2>
   <v-flex xs12>
-    <h2 class='display-3 text-xs-center text-sm-left' style="color: #00BFA5;">REAL ESTATE AGENTS</h2>
-    <h5 class="headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+    <h2 class='display-2 mb-2 text-xs-center text-sm-left' style="color: #00BFA5;">REAL ESTATE AGENTS</h2>
+    <h5 class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
   </v-flex>
 </v-layout>
 
@@ -63,8 +63,8 @@
   <div style="background: #00BFA5;" class="mt-5 mb-5">
     <v-container>
       <v-layout row wrap justify-center id="about">
-        <v-flex shrink>
-          <h2 class='display-3 pt-3 pb-5' style="color: #000;">HOW IT WORKS</h2>
+        <v-flex class="center">
+            <h2 class='center display-1 pt-3 pb-5' style="color: #000;">HOW IT WORKS</h2>
         </v-flex>
       </v-layout>
       <v-layout row wrap>
@@ -130,7 +130,7 @@
 <v-container grid-list-xs>
   <v-layout row wrap>
     <v-flex xs12>
-      <h2 class="display-3 text-uppercase pb-4 text-xs-center" style="color: #00BFA5;">services</h2>
+      <h2 class="display-2 text-uppercase pb-4 text-xs-center" style="color: #00BFA5;">services</h2>
     </v-flex>
     <v-flex xs12 sm6 md4 v-for="(service, i) in services" :key="i" pa-1>
       <services :itemObject="service" data-aos="zoom-in" :data-aos-delay="service.delay">
@@ -149,7 +149,7 @@
 <v-container grid-list-xs>
   <v-layout row wrap>
     <v-flex xs12>
-      <h2 class="display-3 text-uppercase pb-4 text-xs-center" style="color: #00BFA5;">testimonial</h2>
+      <h2 class="display-2 text-uppercase pb-4 text-xs-center" style="color: #00BFA5;">testimonial</h2>
     </v-flex>
     <v-flex xs12 sm6 v-for="(testimony, i) in testimonials" :key="i" class="pa-1">
       <Testimonial :itemObject="testimony">
@@ -165,7 +165,7 @@
 <v-container grid-list-xs>
   <v-layout row wrap id="news">
     <v-flex xs12>
-      <h2 class="display-3 text-uppercase pb-4 text-xs-center" style="color: #00BFA5;">news & events</h2>
+      <h2 class="display-2 text-uppercase pb-4 text-xs-center" style="color: #00BFA5;">news & events</h2>
     </v-flex>
     <v-flex xs12 sm6 md4 v-for="(item,i) in news" :key="i" pa-2>
       <v-card nuxt :to="item.linkerTo" data-aos="fade-up" :data-aos-delay="item.delay" >
@@ -197,7 +197,7 @@
 <v-container grid-list-xs>
   <v-layout row wrap justify-space-between id="about">
     <v-flex xs12>
-      <h2 class="display-3 text-uppercase pb-4 text-xs-center text-sm-left" style="color: #00BFA5;">contact us</h2>
+      <h2 class="display-2 text-uppercase pb-4 text-xs-center text-sm-left" style="color: #00BFA5;">contact us</h2>
       <h4 class="title text-uppercase pt-5 pb-5 pl-3">get in touch</h4>
     </v-flex>
     <v-flex xs12 sm5>
@@ -433,28 +433,28 @@ export default {
         {
           title: 'find property',
           icon: 'search',
-          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           link: 'https://www.google.com',
           delay: '50'
         },
         {
           title: 'buy property',
           icon: 'attach_money',
-          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           link: 'https://www.google.com',
           delay: '100'
         },
         {
           title: 'beautiful home',
           icon: 'home',
-          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           link: 'https://www.google.com',
           delay: '150'
         },
         {
           title: 'buildings & lands',
           icon: 'domain',
-          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           link: 'https://www.google.com',
           delay: '200'
         },
@@ -468,7 +468,7 @@ export default {
         {
           title: 'mobile apps',
           icon: 'stay_current_portrait',
-          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae.',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           link: 'https://www.google.com',
           delay: '300'
         }
@@ -477,32 +477,32 @@ export default {
         {
           name: 'allison holmes',
           avatar: avatar1,
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia.'
         },
         {
           name: 'aiden russell',
           avatar: avatar2,
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia.'
         },
         {
           name: 'charles morgan',
           avatar: avatar3,
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia.'
         },
         {
           name: 'curt rayels',
           avatar: avatar4,
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia.'
         },
         {
           name: 'charles morgan',
           avatar: avatar3,
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia.'
         },
         {
           name: 'curt rayels',
           avatar: avatar4,
-          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis lib.'
+          description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia.'
         }
       ],
       news: [
