@@ -22,6 +22,7 @@ $ npm run generate
 
 This is a personal project to demostrate my skills as a Front End developer. This a landing page created with Vuetify Framework and some tools like Nuxt routing, Html, Css and others.
 
+![alt text](https://i.imgur.com/YpK9U7x.png)
 
 ## Important things to highlight:
 
